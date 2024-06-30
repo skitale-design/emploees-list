@@ -9,9 +9,17 @@ namespace AngularApp20240630.Server
             // Add services to the container.
             builder.Services.AddAuthorization();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:4200/"));
+            });
+
+
 
             var app = builder.Build();
 
+            app.UseCors("AllowSpecificOrigin");
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
