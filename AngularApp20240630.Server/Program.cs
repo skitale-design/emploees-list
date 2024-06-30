@@ -1,3 +1,6 @@
+using AngularApp20240630.Server.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace AngularApp20240630.Server
 {
     public class Program
@@ -15,6 +18,7 @@ namespace AngularApp20240630.Server
                     builder => builder.WithOrigins("http://localhost:4200"));
             });
 
+            builder.Services.AddDbContext<EmploeeDbContext>(x => x.UseSqlServer(builder.Configuration["ConnectionStrings:EmploeeDB"]));
 
 
             var app = builder.Build();
@@ -45,6 +49,12 @@ namespace AngularApp20240630.Server
                     })
                     .ToArray();
                 return forecast;
+            });
+
+            app.MapGet("/emploees", async (EmploeeDbContext db) =>
+            {
+                var emloees = await db.Emploees.ToListAsync();
+                return Results.Json(new { emloees });
             });
 
             app.MapFallbackToFile("/index.html");
