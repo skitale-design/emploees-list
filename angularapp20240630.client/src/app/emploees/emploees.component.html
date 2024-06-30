@@ -6,24 +6,25 @@
       <th scope="col">Имя</th>
       <th scope="col">Отчество</th>
       <th scope="col">Отдел</th>
-      <th scope="col">Зарплата</th>
       <th scope="col">Дата Приема</th>
       <th scope="col">Дата Рождения</th>
+      <th scope="col">Зарплата</th>
       <th scope="col">КНОПКИ</th>
 
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">emploees[0].id</th>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
-      <td>emploees[0].id</td>
+    <tr *ngFor="let e of emploees">
+      <th scope="row">{{e.id}}</th>
+      <td>{{e.lastName}}</td>
+      <td>{{e.firstName}}</td>
+      <td>{{e.middleName}}</td>
+      <td>{{e.department}}</td>
+      <td>{{e.birthDate | date:'dd/MM/yyyy'}}</td>
+      <td>{{e.hireDate | date:'dd/MM/yyyy'}}</td>
+      <td>{{ e.salary | currency:'RUB : ':'symbol-narrow':'1.0-2'}}</td>
+
+      <td>Buttons</td>
     </tr>
   </tbody>
 </table>

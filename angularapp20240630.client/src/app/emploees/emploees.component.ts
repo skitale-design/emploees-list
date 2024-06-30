@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+interface Json{
+
+  emloees:Emploees[];
+
+}
+
 interface Emploees {
   id: number;
   firstName: string;
@@ -27,9 +33,10 @@ export class EmploeesComponent implements OnInit {
   }
 
   getEmploees() {
-    this.http.get<Emploees[]>('https://localhost:7242/emploees').subscribe(
+    this.http.get<Json>('https://localhost:7242/emploees').subscribe(
       (result) => {
-        this.emploees = result;
+        this.emploees = result.emloees;
+        console.log(this.emploees)
       },
       (error) => {
         console.error(error);
