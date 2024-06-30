@@ -10,6 +10,13 @@ const PROXY_CONFIG = [
     ],
     target,
     secure: false
+  },
+  {
+    context: [
+      "/emploees",
+    ],
+    target,
+    secure: false
   }
 ]
 
