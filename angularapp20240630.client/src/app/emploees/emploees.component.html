@@ -1,16 +1,20 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Фамилия</th>
-      <th scope="col">Имя</th>
-      <th scope="col">Отчество</th>
-      <th scope="col">Отдел</th>
-      <th scope="col">Дата Приема</th>
-      <th scope="col">Дата Рождения</th>
-      <th scope="col">Зарплата</th>
+<div class="container">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-outline-success me-md-2" type="button">Создать</button>
+  </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Фамилия</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Отчество</th>
+          <th scope="col">Отдел</th>
+          <th scope="col">Дата Приема</th>
+          <th scope="col">Дата Рождения</th>
+          <th scope="col">Зарплата</th>
       <th scope="col">КНОПКИ</th>
-
+      
     </tr>
   </thead>
   <tbody>
@@ -24,7 +28,13 @@
       <td>{{e.hireDate | date:'dd/MM/yyyy'}}</td>
       <td>{{ e.salary | currency:'RUB : ':'symbol-narrow':'1.0-2'}}</td>
 
-      <td>Buttons</td>
+      <td>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-outline-primary">Править</button>
+          <button type="button" class="btn btn-outline-danger">Удалить</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
+</div>
