@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap-table';
+import 'bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control';
 // import 'bootstrap-table-filter-control';
 
 
@@ -41,7 +42,7 @@ export class EmploeesComponent implements OnInit {
   }
 
   getEmploees() {
-    this.http.get<Json>('https://localhost:4242/emploees').subscribe(
+    this.http.get<Json>('http://localhost:4242/emploees').subscribe(
       (result) => {
         this.emploees = result.emloees;
         if(this.table){
