@@ -1,18 +1,32 @@
+
+
 <div class="container">
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <button class="btn btn-outline-success me-md-2" type="button">Создать</button>
   </div>
-    <table class="table">
+  <table #table
+  id="table"
+  data-show-refresh="false"
+  data-show-toggle="false"
+  data-show-columns="false"
+  data-toggle="t able"
+  data-search="false"
+  data-filter-control="true" 
+  data-show-export="false"
+  data-click-to-select="true"
+  data-toolbar="#toolbar"
+  >
+<thead>
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Фамилия</th>
-          <th scope="col">Имя</th>
-          <th scope="col">Отчество</th>
-          <th scope="col">Отдел</th>
-          <th scope="col">Дата Приема</th>
-          <th scope="col">Дата Рождения</th>
-          <th scope="col">Зарплата</th>
+          <th data-field="id" data-filter-control="input" data-sortable="true" data-searchable="true" >#</th>
+          <th data-field="lastName" data-filter-control="input" data-sortable="true" data-searchable="true" >Фамилия</th>
+          <th data-field="firstName" data-filter-control="select" data-sortable="true" data-searchable="true" >Имя</th>
+          <th data-field="middleName" data-filter-control="input" data-sortable="true" data-searchable="true" >Отчество</th>
+          <th data-field="department" data-filter-control="input" data-sortable="true" data-searchable="true" >Отдел</th>
+          <th data-field="birthDate" data-filter-control="input" data-sortable="true" data-searchable="true" >Дата Приема</th>
+          <th data-field="hireDate" data-filter-control="input" data-sortable="true" data-searchable="true" >Дата Рождения</th>
+          <th data-field="salary" data-filter-control="input" data-sortable="true" data-searchable="true" >Зарплата</th>
       <th scope="col">КНОПКИ</th>
       
     </tr>
