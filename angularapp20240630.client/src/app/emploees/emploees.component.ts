@@ -7,12 +7,6 @@ import 'bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-co
 // import 'bootstrap-table-filter-control';
 
 
-interface Json{
-
-  emloees:Emploees[];
-
-}
-
 interface Emploees {
   id: number;
   firstName: string;
@@ -42,9 +36,9 @@ export class EmploeesComponent implements OnInit {
   }
 
   getEmploees() {
-    this.http.get<Json>('http://localhost:4242/emploees').subscribe(
+    this.http.get<Emploees[]>('http://localhost:4242/emploees').subscribe(
       (result) => {
-        this.emploees = result.emloees;
+        this.emploees = result;
         if(this.table){
           $(this.table.nativeElement).bootstrapTable({data: this.emploees})
         }
